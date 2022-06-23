@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/eel.js"></script>
+    <title>Imsuck</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4c184f18ea.js" crossorigin="anonymous"></script>
+</head>
+<body style="margin: 0%">
+    <div id="prepare">
+        <p>WELCOME</p>
+    </div>
+    <div id="player"></div>
+    <header style="background-color: darkslateblue; text-align: center; padding: 3%;">
+        <i class="fas fa-bars" style="display: inline; margin-right: 20%;" onclick="loadLists()"></i>
+        <div style="display: inline;">
+            <h2 id="TITLE" class="showTitle" ondblclick="">Imsuck</h2>
+            <div id="searchLine"><input id="searchInput" onfocus="searchInput()" onblur="searchLineBlur()" /></div>
+        </div>
+        <i class="fas fa-search" style="display: inline; margin-left: 20%;" onclick="hideTitle()"></i>
+    </header>
+    <article id="musicList">
+        <i id="add-folder" class="fas fa-plus" onclick="showListNameInput()"></i>
+    </article>
+    <footer>
+        <div id="control-bar" onmouseover="focusVolumn()" onmouseout="blurVolumn()">
+            <i id="previous" class="fas fa-backward" onclick="backward()"></i>
+            <i id="next" class="fas fa-forward" onclick="forward()"></i>
+            <i id="play||pause" class="fas fa-play play-pause" onclick="playOrPause()"></i>
+            <input type="range" id="time-control" min="0" max="1" value="0" onchange="jump()" onmousedown="mouseUsingSlider()" onmouseup="mouseStopUsingSlider()">
+            <progress id="time-progress" value="0" max="1"></progress>
+            <p id="state">loading...</p>
+            <p id="total"></p>
+            <p id="playing">there's no playing</p>
+        </div>
+    </footer>
+    <div id="volumeDisplay">
+        <p>0</p>
+    </div>
+    <div id="list-name-input-div">
+        <p>名字: <input id="list-name-input" onfocus="focusListInput()"></p>
+    </div>
+    <div id="grayCover" onmouseover="">
+    </div>
+    <div id="successfulSave">
+        <p>fuck 加入至 your mom</p>
+    </div>
+</body>
+<script type="text/javascript" src="func.js"></script>
+</html>

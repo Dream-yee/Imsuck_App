@@ -1,0 +1,603 @@
+body {
+    user-select: none;
+    font-family: "Microsoft YaHei UI";
+}
+
+header{
+    font-size: 20px;
+}
+
+#prepare{
+    background-color: darkslateblue; 
+    height: 100%; 
+    width: 100%; 
+    position: absolute; 
+    font-size: 69px; 
+    color: aliceblue; 
+    line-height: 569px; 
+    text-align: center;
+    transition: opacity 0.4s;
+    z-index: 999;
+}
+
+#musicList{
+    padding-left: 5%;
+    padding-right: 5%;
+    transition: opacity 0.3s;
+    justify-content: center; 
+    align-items: center; 
+}
+
+#TITLE{
+    display: inline;
+    transition: opacity 0.2s;
+}
+
+#searchLine{
+    opacity: 0;
+    width: 40%;
+    height: 1px;
+    border-top: solid #C799CC 1px;
+    position: absolute;
+    left: 30%;
+    transition: opacity 0.2s, transform 0.4s, border-top 0.1s;
+}
+
+#input{
+    position: absolute;
+    padding-left: 30%;
+}
+
+#searchInput{
+    position: absolute;
+    transform: translate(-50%, -110%);
+}
+
+input{
+    font-size: 18px;
+    color: whitesmoke;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    border: 0px solid #C799CC;
+    background-color: rgba(0, 0, 0 ,0);
+    transition: border 0.2s;
+}
+
+input:focus{
+    outline: none;
+}
+
+i{
+    transition: color 0.2s;
+}
+
+i:hover{
+    color: grey;
+    transition: color 0.2s;
+}
+
+.musicTitle{
+    transform: translateY(-20%);
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.musicTable{
+    border: 2px solid #6c3685;
+    border-radius: 25px;
+    margin-top: 3%;
+    padding: 3% 13% 3% 30%;
+    transition: border 0.2s, opacity 0.2s;
+}
+
+.musicTable:hover{
+    border: 4px solid #7118ff;
+    transition: border 0.2s;
+}
+
+.titlePhoto{
+    position: absolute;
+    width: 20%;
+    transform: translate(-120%, 0%);
+    border-radius: 10px;
+}
+
+.description{
+    text-align: right;
+    position: absolute;
+    transform: translateY(-200%);
+}
+
+.fa-plus{
+    font-size: 40px;
+    color: #6c3685;
+    position: absolute;
+    transform: translateY(-170%);
+    left: 85%;
+}
+
+.fa-plus:hover{
+    color: #7118ff
+}
+
+#player{
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+footer{
+    justify-content: center; 
+    align-items: center;
+    position: fixed;
+    width: 80%;
+    bottom: 5%;
+    padding-left: 10%;
+    padding-right: 7%;
+    z-index: 5;
+}
+
+#control-bar{
+    background-color: rgb(228, 228, 228);
+    top: 85%;
+    border: 1px black solid;
+    border-radius: 30px;
+    padding: 0.5% 30% 0.5% 30%;
+}
+
+#playing{
+    text-align: center;
+    position: relative;
+    top: 10px;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 200%;
+    right: 52%;
+}
+
+#time-control{
+    position: relative;
+    width: 200%;
+    top: 30px;
+    right: 50%;
+    z-index: 999;
+}
+
+.play-pause{
+    position: relative;
+    font-size: 20px;
+    top: 20px;
+    left: 15%;
+}
+
+#next{
+    position: relative;
+    font-size: 20px;
+    top: 20px;
+    left: 65%;
+}
+
+#previous{
+    position: relative;
+    font-size: 20px;
+    top: 20px;
+    left: 0%;
+}
+
+.you-cant-see-me-border{
+    border: 1px solid #ffffff;
+    color: #fff;
+    border-radius: 25px;
+    margin-top: 3%;
+    padding: 25% 13% 5% 30%;
+    transition: border 0.2s;
+}
+
+#state{
+    position: absolute;
+    font-size: 20px;
+    top: 0px;
+    left: 15%;
+}
+
+#total{
+    position: absolute;
+    font-size: 20px;
+    top: 0px;
+    right: 15%;
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    /* overflow: hidden; */
+    width: 200%;
+    height: 10px;
+    outline: none;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 20px;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: #6c3685;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+
+input[type="range"]::-webkit-slider-thumb:hover{
+    background-color: #ff4f83
+}
+
+progress{
+    position: relative;
+    width: 193%;
+    top: 13px;
+    right: 45.1%;
+    -webkit-appearance: none;
+    border: none;
+}
+
+progress::-webkit-progress-bar{
+    background-color: grey;
+    border-radius: 10px;
+    height: 10px;
+}
+
+progress::-webkit-progress-value{
+    background-color: #6c3685;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+#volumeDisplay{
+    position: fixed;
+    font-size: 150px;
+    text-align: center;
+    top: 50%;
+    left: 0%;
+    opacity: 0;
+}
+
+
+#add-folder{
+    top: 15%;
+    left: 95%;
+    font-size: 24px;
+}
+
+#list-name-input-div{
+    position: fixed;
+    opacity: 0;
+    z-index: -1;
+    border: 2px solid rgba(0, 214, 214, 0.788);
+    border-radius: 5px;
+    transition: opacity 0.2s;
+    color: black;
+    top: 50%;
+    left: 25%;
+    padding: 2% 3% 2% 3%;
+    background-color: azure;
+}
+
+#list-name-input{
+    color: black;
+}
+
+.listTable{
+    border: 2px solid #0079ca;
+    border-radius: 25px;
+    margin-top: 3%;
+    padding: 1% 0% 1% 0%;
+    transition: border 0.2s;
+    text-align: center;
+}
+
+.listTable:hover{
+    border: 4px solid #18d1ff;
+    transition: border 0.2s;
+}
+
+#listName{
+    writing-mode: vertical-rl;
+    text-orientation: sideways-right;
+    color: rgba(100, 100, 100, 0.205);
+    position: absolute;
+    left: 0%;
+    display: block;
+    font-size: 123px;
+    margin: 0;
+    top: 9.5%;
+    z-index: 2;
+}
+
+#grayCover{
+    padding: 0;
+    position: fixed;
+    top: 0;
+    height: 969px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.445);
+    z-index: 999;
+    display: none;
+    transition: opacity 0.4s;
+    opacity: 0;
+    color: white;
+}
+
+.chooseRows{
+    column-count: 2;
+    text-align: center;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.column{
+    float: left;
+    text-align: center;
+    border: 2px solid rgba(78, 255, 255, 0.788);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.959);
+    transition: border 0.2s, background-color 0.2s;
+    width: 30%;
+    margin: 1% 6% 3% 6%;
+    padding: 1% 3% 1% 3%;
+    color: black;
+    font-size: 28px;
+}
+
+.column:hover{
+    background-color: rgba(137, 218, 218, 0.788);
+}
+
+.combineListChosen{
+    background-color: rgba(255, 125, 19, 0.788);
+    border: 2px solid rgba(255, 125, 19, 0.788);
+}
+
+.combineListChosen:hover{
+    background-color: rgba(255, 94, 19, 0.788);
+    border: 2px solid rgba(255, 94, 19, 0.788);
+}
+
+#chooseListBorder{
+    transition: opacity 0.3s;
+}
+
+#successfulSave{
+    text-align: center  ;
+    position: fixed;
+    border: 2px solid rgb(119, 255, 164);
+    background-color: rgb(119, 255, 164);
+    border-radius: 5px;
+    padding: 0.5% 3% 0.5% 3%;
+    color: black;
+    font-size: 14px;
+    top: 72%;
+    left: 10%;
+    right: 10%;
+    transition: opacity 0.2s;
+    display: none;
+    opacity: 0;
+}
+
+.modeChooseBoard{
+    column-count: 3;
+    position: relative;
+    left: 30%;
+    width: 70%;
+    top: 7px;
+}
+
+.modeChooseButton{
+    float: left;
+    text-align: center;
+    border: 2px solid rgba(134, 134, 255, 0.788);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.959);
+    width: 80%;
+    padding: 3% 3% 3% 3%;
+    margin-top: 3%;
+    color: black;
+    font-size: 14px;
+    transition: border 0.3s, background-color 0.3s;
+}
+
+.modeChooseButton:hover{
+    border: 3px solid rgba(134, 134, 255, 0.788);
+    background-color: rgba(134, 134, 255, 0.788);
+}
+
+.modeButtonChoosen{
+    border: 3px solid rgba(134, 255, 245, 0.788);
+    background-color: rgba(134, 255, 245, 0.788);
+}
+
+.modeButtonChoosen:hover{
+    border: 3px solid rgba(134, 255, 245, 0.788);
+    background-color: rgba(134, 255, 245, 0.5);
+}
+
+.musicTableInList{
+    border: 2px solid #6c3685;
+    border-radius: 25px;
+    margin-top: 3%;
+    padding: 3% 1% 3% 30%;
+    transition: border 0.2s, opacity 0.2s;
+    width: 45.5%;
+}
+
+.musicTableInList:hover{
+    border: 4px solid #7118ff;
+    transition: border 0.2s;
+}
+
+.sideButtonPosition{
+    position: absolute;
+}
+
+.sideButtonRight{
+    transform: translate(481px, -80px);
+    z-index: 1;
+}
+
+.sideButtonLeft{
+    transform: translate(411px, -80px);
+}
+
+.sideButton{
+    margin: 1% 1% 1% 1%;
+    float: left;
+    text-align: center;
+    border: 2px solid rgba(134, 134, 255, 0.788);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.959);
+    width: 60px;
+    color: black;
+    font-size: 10px;
+    padding: 3% 1% 3% 1%;
+    transition: border 0.3s, background-color 0.3s;
+}
+
+.sideButton:hover{
+    background-color: rgba(134, 134, 255, 0.788);
+    border: 3px solid rgba(134, 134, 255, 0.788);
+}
+
+.playRateButton{
+    border: 3px solid rgba(255, 134, 134, 0.788);
+    background-color: rgba(255, 134, 134, 0.5);
+}
+
+.playRateButton:hover{
+    border: 3px solid rgba(255, 134, 134, 0.788);
+    background-color: rgba(255, 134, 134, 0.5);
+}
+
+.priority{
+    background-color: rgba(182, 255, 134, 0.788);
+    border: 2px solid rgba(182, 255, 134, 0.788);
+}
+
+.removeButton{
+    border: 2px solid rgba(255, 134, 134, 0.87);
+    background-color: rgba(255, 255, 255, 0.959);
+}
+
+.removeButton:hover{
+    border: 3px solid rgba(255, 134, 134, 0.87);
+    background-color: rgba(255, 134, 134, 0.77);
+}
+
+.playing{
+    border: 2px solid rgb(20, 172, 0)
+}
+
+.playing:hover{
+    border: 3px solid rgb(26, 224, 0)
+}
+
+.listButton{
+    float: left;
+    text-align: center;
+    border: 2px solid rgba(134, 134, 255, 0.788);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.959);
+    width: 10%;
+    padding: 1% 2% 1% 2%;
+    color: black;
+    font-size: 14px;
+    transition: border 0.3s, background-color 0.3s;
+}
+
+.listButton:hover{
+    border: 3px solid rgba(134, 134, 255, 0.788);
+    background-color: rgba(134, 134, 255, 0.788);
+}
+
+.editListButton{
+    position: absolute;
+    float: right;
+    transform: translate(340px, -55px);
+}
+
+.removeListButton{
+    transform: translate(430px, -55px);
+    position: absolute;
+    float: right;
+    border: 2px solid rgba(255, 134, 134, 0.87);
+}
+
+.removeListButton:hover{
+    border: 3px solid rgba(255, 134, 134, 0.87);
+    background-color: rgba(255, 134, 134, 0.87);
+}
+
+#editName{
+    border: 2px solid #18ffd8;
+    border-radius: 5px;
+    background-color: #18ffd8ad;
+    position: fixed;
+    align-items: center; 
+    top: 45%;
+    left: 22.5%;
+    color: black;
+    width: 50%;
+    padding: 1% 3% 1% 3%;
+}
+
+#applyRemoveButton{
+    border: 2px solid #ff1818;
+    border-radius: 5px;
+    background-color: #ffffff00;
+    position: fixed;
+    text-align: center;
+    top: 45%;
+    left: 22.5%;
+    color: black;
+    width: 50%;
+    font-size: 30px;
+    padding: 1% 3% 1% 3%;
+    transition: background-color 0.3s;
+}
+
+#applyRemoveButton:hover{
+    background-color: #ff1818c5;
+    border: 2px solid #ff1818;
+}
+
+#uploadCode{
+    border: 2px solid #ffb618;
+    border-radius: 5px;
+    background-color: #ffb618ad;
+    position: fixed;
+    align-items: center; 
+    top: 45%;
+    left: 10.5%;
+    color: black;
+    width: 70%;
+    padding: 1% 3% 1% 3%;
+    user-select: text;
+}
+
+#codeName{
+    border: 2px solid #18c9ff;
+    border-radius: 5px;
+    background-color: #18c9ffad;
+    position: fixed;
+    align-items: center; 
+    top: 45%;
+    left: 22.5%;
+    color: black;
+    width: 50%;
+    padding: 1% 3% 1% 3%;
+}
